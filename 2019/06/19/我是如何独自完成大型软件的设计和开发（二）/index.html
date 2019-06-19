@@ -1,0 +1,43 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta name="generator" content="Hexo 3.8.0"><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><meta name="author" content="Joshua"><title>我是如何独自完成大型软件的设计和开发（二） · Joshua-blog_晁学磊</title><meta name="description" content="从从事行业上讲，15年我做的是大数据行业，16年做的高性能计算，并幸运的是都参与了公司的核心产品设计和研发，特别是在做高性能计算云平台时更加深入的、独当一面的参与了产品整体的设计和研发协调。
+另一方面，因为一直为自己专科学历而自卑，报考了成人高考的本科学历现在也毕业了，但目的是为了考研。这一直以来是"><meta name="keywords"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="renderer" content="webkit"><link rel="short icon" href="/images/favicon.png" type="image/x-icon"><link rel="stylesheet" href="/css/style.css"><link rel="stylesheet" href="/css/blog_basic.css"><link rel="stylesheet" href="/css/font-awesome.min.css"><link rel="alternate" type="application/atom+xml" title="ATOM 1.0" href="/atom.xml"></head><body><div class="main"><div class="page-top animated fadeInDown"><div class="main"><div class="sidebar animated fadeInDown"><div class="logo-title"><a href="/"><img src="/images/logo@2x.png" style="height:40px;"></a></div></div><div class="nav"><li><a href="/">首页</a></li><li><a href="/about">关于</a></li><li><a href="/archives">归档</a></li></div></div></div><div class="autopagerize_page_element"><div class="content"><div class="post-page"><div class="post animated fadeInDown"><div class="cont-right"><div class="post-title"><h3><h2 style="text-align: center;">我是如何独自完成大型软件的设计和开发（二）</h2></h3></div><div class="post-content"><p style="text-indent:2em">从从事行业上讲，15年我做的是大数据行业，16年做的高性能计算，并幸运的是都参与了公司的核心产品设计和研发，特别是在做高性能计算云平台时更加深入的、独当一面的参与了产品整体的设计和研发协调。</p>
+<p style="text-indent:2em">另一方面，因为一直为自己专科学历而自卑，报考了成人高考的本科学历现在也毕业了，但目的是为了考研。这一直以来是我的心病。以前看过一段话，不知出自哪本书，这样写的：</p>
+
+<blockquote>
+<p>我一贯的看法是找工作就找老板谈，为什么？因为老板看人和人事看人的角度不一样。人事在聘人时，看你的缺点，所以百般刁难你；但老板看人却只看你的优点, 哪怕你全身都是缺点，但只要有个突出的优点，老板就会用你！<br>刘邦和项羽夺天下，手下用了一帮人：樊哙是杀狗的屠夫，灌婴是布贩，娄敬是车夫，彭越是强盗，周勃是吹鼓手，韩信是待业青年。陈平一幵始跟魏王混，混不下去，看到项羽猛，就去投奔项羽，但在项羽那儿混得不是很好，于去找刘邦跟刘邦混这些人，按照现在的人事选人标准，这帮人一个也选不上。</p>
+</blockquote>
+<p style="text-indent:2em">这个例子也不是反驳目前的面试体系，而是反对技术人员招聘的第一面或者电话沟通是由不懂技术的人事绝对把控的。另外学历门槛也是毋庸置疑的，我支持，毕竟在企业招投标、招聘成本上选高学历往往是不会出错的。也正因如此，我因为当年高考的失利在这几年里付出了比大多数本科生多得多的努力，但仍然觉得不够。至此我从未懈怠过。</p>
+
+<p style="text-indent:2em">两篇文章中，6000多字的自我介绍是尽力为了把我完全独立开发的原因描述清楚。这充满我个人对未来职业发展的担忧（学历问题）和内心里对优秀产品执着的追求，这几年来我参与过40多个项目的前段开发设计和售前支持，均圆满完成；接受过至少8个产品的方案设计和资源整合，甚至筛选供应商；独立完成过两个项目的单方面外包管理和交付，这里补充一句，也正因为这两个在离职到入职的间隙承接的独立项目使得我有了完成IAsset的研发资金。我曾经把8个小时的工作比作8小时的发行股票：</p>
+
+<blockquote>
+<p>我们每个人都是一个上市公司，每天都要发行8小时股票去融资，随着时间的推移有的公司股价越来越高，有的则越来越低，不难发现我们目的是做高股价，如果自身发展对股市依赖越来越小，就适时回购一些</p>
+</blockquote>
+<p style="text-indent:2em">我在用这些资金去回购我曾经发行出去的“股票”，来完成自己的产品，这个产品也不是为了所谓情怀、梦想、能力提升，仅仅是我这个从事过企业底层、中层管理者发现的企业管理缺陷而制造的工具。下面将我所发现的企业管理问题和个人见地列举一下，这里尤指软件企业。</p>
+
+<h3 id="认识企业成本"><a href="#认识企业成本" class="headerlink" title="认识企业成本"></a>认识企业成本</h3><p>通常的企业成本是人、材、机，人：人员工资，材：材料，机：机械成本，细化一下：</p>
+<ul>
+<li>人员工资的组成包括实发薪资和企业的税费社保；</li>
+<li>材料这就是材料的直接购买费用，但有时候会有债务因素，那就不能避免债务成本；</li>
+<li>机械成本包含自有机械的折旧成本和租赁机械的租赁成本及其的维修保养成本；</li>
+</ul>
+<p style="text-indent:2em">对于软件行业来说，以前和传统行业的客户聊过天，很幽默恰当：“我们企业的成本是人才机，其中机械维修费用很高，你们软件行业很好哦，没有这个维修费用”，我答道：“哪里没有，我们人经常坏，坏了就要去医院看病啊。（但这个好像不计入企业成本，可见软件行业天生有低成本的优势啊，另外别看工资高，一部分人体维修费），但确实没多少“材” ”。</p>
+
+<h3 id="开源节流"><a href="#开源节流" class="headerlink" title="开源节流"></a>开源节流</h3><p style="text-indent:2em">企业开源节流是企业管理中的目的，但很多企业作恶的并不好，特别是一些中国企业，喜欢用信仰和哥们一起去管理，也难怪，咱们中国人特别吃这一套，如果这一招运用的成功再加上一些管理制度往往做的非常好，员工工作起来不计个人得失全身心投入，最后形成良性循环。在这方面能力突出的企业尤为华为。不幸的是很多企业也模仿如此行为搞到最后都弄得四不像，允诺员工的报酬迟迟未能兑现，形成了恶性循环，最后破产倒闭或者老板跑路。</p>
+所以说，针对中小企业，必须理清开源节流的各项因素然后加以把控，下面我们一一列举：
+
+<p>企业多赚钱的路子无外乎这几种：</p>
+<ul>
+<li>多些赚钱的路子</li>
+<li>让老客户持续购买</li>
+</ul>
+<p>节流的渠道就非常多了：</p>
+<ul>
+<li>提高生产效率</li>
+<li>引进好的生产流程</li>
+<li>精简机构</li>
+<li>知识复用</li>
+<li>提高企业资源利用</li>
+</ul>
+<p style="text-indent:2em">就这里我们常常为企业搭建CRM系统等，然后再弄一个OA然后再弄一个ERP之类的，大众使用频率非常低的一些软件，注意这里有一个关键词`使用频率非常低`，这会导致很严重的后果，企业使用这些软件目的就是为了整合企业所有成员，提高企业活力然后增加效率创收。但使用频率很低和初心有违。使用频率非常高也不见得是好事，不能过度依赖软件，事事都要通过软件才能完成。举个以前产品设计中的例子：记得一次设计中，要实现一个协同设计然后发起邀请的业务，开会讨论大家各抒己见，要发邮件、短信、屏幕中心推送等方式提醒用户，我弱弱的说了一句：为什么不能拉个微信群或者打个电话通知一下，亦或者就我们产品的使用群体，大家都是坐在同一个办公室或者相邻办公室的同事，站起来喊一嗓子为什么不行。</p>
+
+</div><div class="post-footer"><div class="meta"><div class="info"><i class="fa fa-sun-o"></i><span class="date">2019-06-19</span><i class="fa fa-tag"></i><a class="tag" href="/tags/产品/" title="产品">产品 </a></div></div></div></div></div><div class="share"><div class="evernote"><a class="fa fa-bookmark" href="javascript:(function(){EN_CLIP_HOST='http://www.evernote.com';try{var%20x=document.createElement('SCRIPT');x.type='text/javascript';x.src=EN_CLIP_HOST+'/public/bookmarkClipper.js?'+(new%20Date().getTime()/100000);document.getElementsByTagName('head')[0].appendChild(x);}catch(e){location.href=EN_CLIP_HOST+'/clip.action?url='+encodeURIComponent(location.href)+'&amp;title='+encodeURIComponent(document.title);}})();" ref="nofollow" target="_blank"></a></div><div class="weibo"><a class="fa fa-weibo" href="javascript:void((function(s,d,e){try{}catch(e){}var f='http://service.weibo.com/share/share.php?',u=d.location.href,p=['url=',e(u),'&amp;title=',e(d.title),'&amp;appkey=2924220432'].join('');function a(){if(!window.open([f,p].join(''),'mb',['toolbar=0,status=0,resizable=1,width=620,height=450,left=',(s.width-620)/2,',top=',(s.height-450)/2].join('')))u.href=[f,p].join('');};if(/Firefox/.test(navigator.userAgent)){setTimeout(a,0)}else{a()}})(screen,document,encodeURIComponent));"></a></div><div class="twitter"><a class="fa fa-twitter" href="http://twitter.com/home?status=,http://chaoxuelei.github.io/2019/06/19/我是如何独自完成大型软件的设计和开发（二）/,Joshua-blog_晁学磊,我是如何独自完成大型软件的设计和开发（二）,;"></a></div></div><div class="pagination"><ul class="clearfix"><li class="next pagbuttons"><a class="btn" role="navigation" href="/2019/06/18/我是如何独自完成大型企业软件的（一）/" title="我是如何独自完成大型软件的设计和开发（一）">下一篇</a></li></ul></div></div></div></div><div class="footer"><div class="by_farbox"><a href="https://hexo.io/zh-cn/" target="_blank">Proudly published with Hexo&#65281;</a></div></div></div><script src="/js/jquery.js"></script><script src="/js/jquery-migrate-1.2.1.min.js"></script><script src="/js/jquery.appear.js"></script></body></html>
