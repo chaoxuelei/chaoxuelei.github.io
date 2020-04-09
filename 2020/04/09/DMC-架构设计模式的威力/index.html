@@ -1,0 +1,54 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta name="generator" content="Hexo 3.8.0"><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><meta name="author" content="Joshua"><title>DMC 的巨大威力，可能远远超过数据中台 · Joshua-blog</title><meta name="description" content="讲在前面近些年来，大数据这个概念异常火爆。越来越多的企业正在重视数据。那么数据能为我们带来什么呢？
+这得从大数据的价值说起，我们先来看下面的例子：
+
+大火的美剧《纸牌屋》，通过大数据分析，选取适合网友的视频偏好和明星选择，造成轰动的播放量。大数据在社交媒体和娱乐行业的大数据分析，一部分也在引导观众和"><meta name="keywords"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="renderer" content="webkit"><link rel="short icon" href="/images/favicon.png" type="image/x-icon"><link rel="stylesheet" href="/css/style.css"><link rel="stylesheet" href="/css/blog_basic.css"><link rel="stylesheet" href="/css/font-awesome.min.css"><link rel="alternate" type="application/atom+xml" title="ATOM 1.0" href="/atom.xml"></head><body><div class="main"><div class="page-top animated fadeInDown"><div class="main"><div class="sidebar animated fadeInDown"><div class="logo-title"><a href="/"><img src="/images/logo@2x.png" style="height:40px;"></a></div></div><div class="nav"><li><a href="/">首页</a></li><li><a href="/about">关于</a></li><li><a href="/archives">归档</a></li></div></div></div><div class="autopagerize_page_element"><div class="content"><div class="post-page"><div class="post animated fadeInDown"><div class="cont-right"><div class="post-title"><h3><h2 style="text-align: center;">DMC 的巨大威力，可能远远超过数据中台</h2></h3></div><div class="post-content"><h2 id="讲在前面"><a href="#讲在前面" class="headerlink" title="讲在前面"></a>讲在前面</h2><p>近些年来，大数据这个概念异常火爆。越来越多的企业正在重视数据。那么数据能为我们带来什么呢？</p>
+<p>这得从大数据的价值说起，我们先来看下面的例子：</p>
+<p><img src="https://i.loli.net/2020/04/09/stvfSBH9pc5dbqW.jpg" alt="u_1196780562,4281282886_fm_26_gp_0.jpg"></p>
+<p>大火的美剧《纸牌屋》，通过大数据分析，选取适合网友的视频偏好和明星选择，造成轰动的播放量。大数据在社交媒体和娱乐行业的大数据分析，一部分也在引导观众和粉丝，让其为娱乐产业消费。</p>
+<p>这个例子中我们可以看到存在几个逻辑断点，叙述中都没有讲到，仔细拆分一下我们发现，要实现上面例子中的目标我们需要经过以下几个步骤：</p>
+<ul>
+<li>数据采集（挖掘）</li>
+<li>数据整理（清洗）</li>
+<li>数据分析（可视化、算法模型推演……）</li>
+<li>决策（分析结果）</li>
+</ul>
+<p>但往往现实生活中这个过程是动态的。比如我们根据用户浏览网页的历史数据为用户推送他喜爱的内容，然后用户新的浏览行为又对推送结果做出影响，如此反复，优化出更适合用户口味的内容，没有终点。</p>
+<p>所以我们会发现，这些节点在上面的过程中是持续的，系统不断的通过采集 &gt; 清洗（动态过程的清洗节点会变得比较轻量，因为数据结构已经是比较结构化了。）&gt; 分析 &gt; 决策。</p>
+<p>现在越来越多的互联网应用采用这套利用数据的思路，只不过每家都有自己独特的算法（数据分析）。</p>
+<p>那么答案显而易见，数据能为我们带来的是科学决策，以及科学决策导致的用户体验提升、效率提升……到收益增加。</p>
+<p>回到我们今天要说的 DMC（Data Message Center：数据消息平台） 平台架构。我认为这将是未来每一个企业（不仅是软件企业）所应该架设的基础服务平台。相比于数据中台，DMC 才是企业的中枢命脉，那么下面我们展开来讲一下。</p>
+<p>随着数字化的进程，信息变得像空气、水一样的必要，同样的获取成本也将变得越来越廉价（经济规则的必然性）。但与水和空气不一样，信息的产物数据，是随着时间向前，逐渐堆积的。不同的数据充斥着我们的生活，它们是大量的、错综的、看似无序的，这就是大数据。我们要怎样从大数据中提炼有利于我们的部分变得至关重要，最常见的做法是企业 BI ，是从数据源接入（有些 BI 工具还带有采集功能）到分析决策的一整套流程。</p>
+<p>再此基础上数据中台强调数据统一管理，将数据池、数据湖……进行整合，要求数据创建时的结构化，对不结构化的进行自动结构化，方便分析工具数据源接入以及打通数据在各产品间流通的可控和通畅。</p>
+<h2 id="DMC"><a href="#DMC" class="headerlink" title="DMC"></a>DMC</h2><p>而 DMC 是更进一步的、更具革命性的企业数字化基础平台。他将企业数字化分为数据中心和消息中心，统一在 DMC 平台进行发放和管理。</p>
+<p>区别于目前所有的数据管控架构，DMC 将不允许使用数据库方言去构建数据库表，因为这对业务扩展和产片的资产性非常不利。但同时 DMC 必须具备结构导入导出能力和自己的方言，以便于配置的传播和备份。DMC 更大的能力在于，他能够统一管控企业的对外消息管道，也就是数据的流通。</p>
+<p>一张图我们来看看 DMC 架构的样子：</p>
+<p><img src="https://i.loli.net/2020/04/09/v2wTdZ6CmuWrDht.png" alt="微信截图_20200409202337.png"></p>
+<p>其主要目的有以下几点：</p>
+<ul>
+<li>简化应用开发</li>
+<li>数据统一管控</li>
+<li>监测信息动态</li>
+<li>提高安全性和扩展性</li>
+</ul>
+<p>就一上几点我们来看看 DMC 怎样实现这些特性的：</p>
+<h3 id="简化应用开发"><a href="#简化应用开发" class="headerlink" title="简化应用开发"></a>简化应用开发</h3><p>我们都知道，所有应用都分为后台和前端，采用 DMC 在为应用创建数据库时，我们可以通过 DMC 的插件为应用自动生成大量的 CURD 接口，免去了很大程度的应用后端开发，再加上全平台的统一身份认证。</p>
+<p>消息平台监控数据的变化。通过应用的订阅实时的将这些数据的变化信息进行广播，让应用得以实现自动化的流程。</p>
+<p>消息平台能够还能够接入任何外部的消息发送器，并向上层应用提供统一的操作接口，使应用通知变得简单统一。</p>
+<p>应用间的相互消息传递也变得非常容易。</p>
+<p>如此一来能省去至少一半的应用开发成本。</p>
+<h3 id="数据统一管控"><a href="#数据统一管控" class="headerlink" title="数据统一管控"></a>数据统一管控</h3><p>这个层面你可以将 DMC 看作一个 ORM 中间件，他有自己的一套方言，并能够将方言转换成任何高性能的数据库方言，并且为用户提供一套可视化的构建界面。</p>
+<p>对于初级 DMC 平台，不允许在为应用创建数据库时指定数据库类型，这对于 DMC 将不同应用之间不同的数据类型结构化极其有用，不同应用间数据数据结构都能在 DMC 上面进行统一的数据整理，那么相互调用也会变得非常简单。</p>
+<p>高级的 DMC 平台，虽然允许用户创建不同类型的数据库，但这个步骤将在 DMC 基础上完成，那么表关联关系和字段注释，也将使得数据分析变得容易。</p>
+<p>对于以插件方式构建在 DMC 平台上的 BI系统而言，无论如何数据源都看起来是清晰且单一的。</p>
+<h3 id="监测企业所有数据动态"><a href="#监测企业所有数据动态" class="headerlink" title="监测企业所有数据动态"></a>监测企业所有数据动态</h3><p>既然企业应用的所有数据和消息都要流经 DMC 平台，那么信息流的管道监控也将变得十分容易。</p>
+<p>我们可以在 DMC 平台清晰的看到信息的阻塞情况，必要的时候为指定的管道扩充内容和带宽。</p>
+<p>并且这些管道的使用情况都将作为 DMC 平台本身的数据存储在数据库中，同样的我们可以使用 BI 工具对构建在 DMC 平台上的应用进行访问量等分析。</p>
+<p>必要的时候我们可以使用插件方式对各管道的收缩，按照算法自动化调整。</p>
+<h3 id="提高安全性和扩展性"><a href="#提高安全性和扩展性" class="headerlink" title="提高安全性和扩展性"></a>提高安全性和扩展性</h3><h4 id="安全性"><a href="#安全性" class="headerlink" title="安全性"></a>安全性</h4><p>上面我们提到了，DMC 能够监控消息管道的资源利用动态，那么对于反常的资源利用也能够容易的判断出来，这对于企业信息安全至关重要。因为上面也提到，所有的信息流通都会被 DMC 所记录，那么一些保密作业的安全审计会变得十分简单。</p>
+<h4 id="扩展性"><a href="#扩展性" class="headerlink" title="扩展性"></a>扩展性</h4><p>我们上文中也提到，初级 DMC 平台和高级 DMC 平台，这中间至关重要的是一套 DMC 标准规范，如果有了统一的对上标准，我们可以在下面做很多操作，比如 DBA 操作和集群调度来提高数据的操作性能，对于初级 DMC 我们可能用不到这么复杂的技术，简单的数据库常规操作就可以支撑，只需要为他们设计一套标准的数据结构就可以。</p>
+<h3 id="DMC-的具体内部架构"><a href="#DMC-的具体内部架构" class="headerlink" title="DMC 的具体内部架构"></a>DMC 的具体内部架构</h3><p><img src="https://i.loli.net/2020/04/09/EZpPkwzTAKWqjC5.png" alt="微信截图_20200409202337.png"></p>
+<p>一个新的问题，我们以上都在讨论基于 DMC 去开发新的应用，但是外部应用该如何接入 DMC ，确实这是 DMC 目前来看最大的难点。对于外部应用而言，DMC 可以做的就与数据中台很雷同了。但也不妨碍我们通过它的插件功能一点点将其移植进 DMC。</p>
+<p>综上来看，DMC 架构的最大难点就是一套标准规范，这能很大程度上降低外部应用介入难度，也能够更加方便 DMC 的传播和配置复用性。</p>
+<p>相对于数据中台等架构理论，我认为 DMC 才是信息化基础设施的不二之选。</p>
+<h3 id="实践"><a href="#实践" class="headerlink" title="实践"></a>实践</h3><p>为此，我实验性的开发了 Kodev（taiwutech.com） 这个 DMC 平台，大家可以通过使用说明，或者注册用户后去了解他的整套思想流程。</p>
+</div><div class="post-footer"><div class="meta"><div class="info"><i class="fa fa-sun-o"></i><span class="date">2020-04-09</span><i class="fa fa-tag"></i></div></div></div></div></div><div class="share"><div class="evernote"><a class="fa fa-bookmark" href="javascript:(function(){EN_CLIP_HOST='http://www.evernote.com';try{var%20x=document.createElement('SCRIPT');x.type='text/javascript';x.src=EN_CLIP_HOST+'/public/bookmarkClipper.js?'+(new%20Date().getTime()/100000);document.getElementsByTagName('head')[0].appendChild(x);}catch(e){location.href=EN_CLIP_HOST+'/clip.action?url='+encodeURIComponent(location.href)+'&amp;title='+encodeURIComponent(document.title);}})();" ref="nofollow" target="_blank"></a></div><div class="weibo"><a class="fa fa-weibo" href="javascript:void((function(s,d,e){try{}catch(e){}var f='http://service.weibo.com/share/share.php?',u=d.location.href,p=['url=',e(u),'&amp;title=',e(d.title),'&amp;appkey=2924220432'].join('');function a(){if(!window.open([f,p].join(''),'mb',['toolbar=0,status=0,resizable=1,width=620,height=450,left=',(s.width-620)/2,',top=',(s.height-450)/2].join('')))u.href=[f,p].join('');};if(/Firefox/.test(navigator.userAgent)){setTimeout(a,0)}else{a()}})(screen,document,encodeURIComponent));"></a></div><div class="twitter"><a class="fa fa-twitter" href="http://twitter.com/home?status=,http://chaoxuelei.github.io/2020/04/09/DMC-架构设计模式的威力/,Joshua-blog,DMC 的巨大威力，可能远远超过数据中台,;"></a></div></div><div class="pagination"><ul class="clearfix"><li class="next pagbuttons"><a class="btn" role="navigation" href="/2020/03/24/JS-闭包/" title="JS 闭包">下一篇</a></li></ul></div></div></div></div><div class="footer"><div class="by_farbox"><a href="https://hexo.io/zh-cn/" target="_blank">Proudly published with Hexo&#65281;</a></div></div></div><script src="/js/jquery.js"></script><script src="/js/jquery-migrate-1.2.1.min.js"></script><script src="/js/jquery.appear.js"></script></body></html>
